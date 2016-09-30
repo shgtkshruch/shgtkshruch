@@ -6,19 +6,21 @@
     font-size: 34px;
     text-align: center;
     text-transform: uppercase;
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 3px;
-      height: 200%;
-      background-color: red;
-      transform: translate(-50%, -50%) rotate(45deg);
-      z-index: -1;
-    }
     &--intro {
       display: none;
     }
+  }
+  &__headingInner {
+    display: inline-block;
+    border-bottom: 5px solid;
+  }
+}
+
+@keyframes wave {
+  0 {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10%);
   }
 }
