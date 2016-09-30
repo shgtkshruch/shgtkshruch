@@ -8,8 +8,6 @@
   &.is-active {
     &,
     .intro__json {
-      background-color: #fff;
-      color: #000;
     }
   }
   &__json {
@@ -29,6 +27,10 @@
   &__particle {
     width: 100%;
     height: 100vh;
-    transition: all 1s;
+    opacity: 0;
+    transition: opacity 1s;
+    &.is-active {
+      opacity: 1;
+    }
   }
 }
