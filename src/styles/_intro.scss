@@ -11,12 +11,14 @@
     padding: 1em;
     font-size: 16px;
     line-height: 1.4;
+    height: (16px * 1.4 * 21);
     text-align: left;
     white-space: pre;
     background-color: #000;
     color: #fff;
     @media (min-width: $screen-sm) {
       font-size: 20px;
+      height: (20px * 1.4 * 21);
     }
   }
   &__particle {
