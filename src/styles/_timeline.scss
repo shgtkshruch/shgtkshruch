@@ -79,8 +79,7 @@
   }
   &__heading {
     position: relative;
-    height: $height;
-    line-height: $height;
+    padding: 1rem;
     margin: 0;
     padding-left: $padding;
     background-color: $color;
@@ -106,7 +105,7 @@
     background-color: $color;
     color: #fff;
     margin: 0;
-    padding: $padding;
+    padding: 0 $padding $padding;
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
   }
 }
