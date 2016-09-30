@@ -19,7 +19,7 @@
       this.destroy();
     },
     offset() {
-      return this.element.clientHeight / 2
+      return 700;
     }
   });
 
