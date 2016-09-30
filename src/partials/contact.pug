@@ -1,0 +1,14 @@
+section.section
+  .l-container
+    h1.section__heading contact
+    ul.contact
+      - contact = {};
+      - contact[0] = {text: 'twitter', class: 'twitter', link: 'https://twitter.com/shgtkshruch'};
+      - contact[1] = {text: 'github', class: 'github', link: 'https://github.com/shgtkshruch'};
+      - contact[2] = {text: 'hateba', class: 'hatena', link: 'https://github.com/shgtkshruch'};
+      - contact[3] = {text: 'mail', class: 'envelope', link: 'mailto:shgtk.shruch@gmail.com'};
+      each c, i in contact
+        li.contact__item
+          a.contact__link(href=`${c.link}` target="_blank")
+            span.contact__text= c.text
+            i.contact__icon.fa(class=`fa-${c.class}`)

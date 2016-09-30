@@ -1,0 +1,47 @@
+.contact {
+  font-size: 0;
+  text-align: center;
+  &__item {
+    display: inline-block;
+    margin: 0 20px 40px;
+    font-size: 50px;
+  }
+  &__icon {
+    $size: 90px;
+    position: relative;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: all .3s;
+    &.fa-twitter {
+      background-color: #1da1f3;
+    }
+    &.fa-github {
+      background-color: #333;
+    }
+    &.fa-hatena {
+      background-color: #00a4de;
+    }
+    &.fa-envelope {
+      background-color: #47d191;
+    }
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__text {
+    display: none;
+  }
+}
+
+.fa-hatena {
+  &::before {
+    content: "B!";
+    font-family: Verdana;
+    font-weight: bold;
+  }
+}
