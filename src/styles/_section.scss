@@ -1,10 +1,22 @@
 .section {
   padding: 100px 0;
   &__heading {
+    position: relative;
     margin: 0 0 40px;
     font-size: 34px;
     text-align: center;
     text-transform: uppercase;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 3px;
+      height: 200%;
+      background-color: red;
+      transform: translate(-50%, -50%) rotate(45deg);
+      z-index: -1;
+    }
     &--intro {
       display: none;
     }
