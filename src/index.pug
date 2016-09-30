@@ -17,11 +17,39 @@ html(lang="ja")
     link(rel='stylesheet', href='styles/main.css', media='all')
     // endbuild
   body
-    h1 Hello Github Pages
+    .intro
+      #js-typeString.intro__json
+        code
+          pre
+            .
+              {
+                "name": "Shigetaka Shirouchi",
+                "version": "1.0.0",
+                "description": "Front-end engineer",
+                "keywords": [
+                  "Programming",
+                  "Design",
+                  "Reading"
+                ],
+                "os": ["darwin"],
+                "devDependencies:" {
+                  "babel": "6.16.2",
+                  "Git": "2.10.0",
+                  "gulp": "3.9.1",
+                  "node-sass": "3.10.0",
+                  "pug": ">=2.0.0-alpha",
+                  "Vim": "8.0.0",
+                  "WordPress": "4.6.1"
+                }
+              }
+      #js-typeOut.intro__json
+
     // build:js scripts/vendor.js
     // bower:js
+    script(src='../bower_components/jquery/dist/jquery.js')
+    script(src='../bower_components/typed.js/dist/typed.min.js')
     // endbower
     // endbuild
     // build:js scripts/main.js
-    script(src='scripts/main.js')
+    script(src='scripts/typed.js')
     // endbuild
