@@ -4,6 +4,7 @@
     "jquery": "^3.1.1",
     "typed.js": "^1.1.4",
     "normalize-css": "normalize.css#^4.2.0",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "animejs": "^1.1.1"
   }
 }
