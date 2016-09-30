@@ -14,6 +14,16 @@
         elasticity: 1000,
         delay(el, index) {
           return index * 200;
+        },
+        begin() {
+          console.log('begin');
+          anime({
+            targets: '.skill__num',
+            scale: {
+              value: 2,
+              duration: 500
+            }
+          });
         }
       });
       this.destroy();

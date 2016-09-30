@@ -3,14 +3,19 @@ section.section
     h1.section__heading skills
     ul.skill
       - skills = {};
-      - skills[0] = {name: 'HTML5', percentage: 95};
-      - skills[1] = {name: 'CSS3', percentage: 90};
-      - skills[2] = {name: 'JavaScript', percentage: 85};
-      - skills[3] = {name: 'gulp', percentage: 90};
-      - skills[4] = {name: 'Git', percentage: 80};
-      - skills[5] = {name: 'WordPress', percentage: 85};
+      - skills[0] = {name: 'HTML5', percentage: 95, text: ['HTMLを効率的に書くためにpugというテンプレートエンジンを使っています。', 'コーディングしたものは必ずW3Cのバリデーションにかけることで、仕様に沿ったコーディング心がけています。', '人にも機械にもわかりやすいシンプルなマークアップを心がけています。']};
+      - skills[1] = {name: 'CSS3', percentage: 90, text: ['CSSの保守性と効率性を高めるためにSassを利用してコーディングをしています。', 'またCSSの設計にも注力しています。', 'BEMとSMACSSをミックスさせた設計手法を用いることで、保守性の高いわかりやすいCSSを書くことを心がけています。']};
+      - skills[2] = {name: 'JavaScript', percentage: 85, text: ['babelを用いることで将来標準になる記法をいち早く取り入れています。', 'また普段から情報収集を欠かさず行い、新しいライブラリやフレームワークを試しています。', 'ライブラリに任せられるところはライブラリに任せ、プロジェクトの核となる部分にリソースを集中できる環境を作っています。']};
+      - skills[3] = {name: 'gulp', percentage: 90, text: ['pugやSassなどのメタ言語をコンパイルする作業や画像やCSS、JavaScriptの圧縮などの煩雑な作業はgulpで自動化しています。', 'また、Yeomanを使って自作のgeneratorを作っており、一瞬で自分の制作環境を構築できるようにしています。']};
+      - skills[4] = {name: 'Git', percentage: 80, text: ['プロジェクトのバージョン管理にGitを採用しています。', '細かい粒度でコミットし、なにを行ったのかわかりやすいコミットメッセージを書くことを心がけています。', 'まだオープンソースのプロジェクトにもコミットすることもあり、プルルリクエストを使った開発経験もあります。']};
+      - skills[5] = {name: 'WordPress', percentage: 85, text: ['CMSはWordPressを採用しています。', 'オリジナルテーマの作成や、必要であればオリジナルのプラグインを作成して、テーマとプラグインを連動させたサイトの制作経験もあります。', 'WordPressの開発環境を立ち上げるためにDockerを採用しており、開発環境構築の手間を最小限にしています。']};
       each skill, i in skills
         li.skill__item
           span.skill__name= skill.name
           span.skill__bar(data-width=`${skill.percentage}%`)
           span.skill__num= skill.percentage
+          p.skill__text
+            each text in skill.text
+              = text
+              br
+

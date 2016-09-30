@@ -1,9 +1,12 @@
 .skill {
-  $height: 35px;
+  $height: 50px;
   &__item {
     position: relative;
     height: $height;
-    margin-bottom: 2px;
+    transition: height .3s;
+    &:not(:last-child) {
+      border-bottom: 2px solid #fff;
+    }
     &::after {
       content: '';
       position: absolute;
@@ -13,6 +16,20 @@
       height: 100%;
       background-color: #eee;
       z-index: -1;
+    }
+    @media (min-width: $screen-sm) {
+      &:hover {
+        height: 200px;
+        .skill__bar {
+          width: 100% !important;
+        }
+        .skill__num {
+          display: none;
+        }
+        .skill__text {
+          opacity: 1;
+        }
+      }
     }
   }
   &__name {
@@ -24,9 +41,10 @@
   }
   &__bar {
     display: inline-block;
-    height: $height;
+    height: 100%;
     width: 0;
-    background: linear-gradient(to left, #4CB8C4, #3CD3AD)
+    background: linear-gradient(to left, #4CB8C4, #3CD3AD);
+    transition: width .3s;
   }
   &__num {
     display: none;
@@ -38,6 +56,20 @@
       transform: translateY(-50%);
       color: #3CD3AD;
       font-weight: bold;
+    }
+  }
+  &__text {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 7em;
+    transform: translateY(-50%);
+    width: 90%;
+    color: #fff;
+    transition: opacity .5s;
+    @media (min-width: $screen-sm) {
+      display: block;
     }
   }
 }
