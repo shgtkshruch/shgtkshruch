@@ -9,16 +9,16 @@
         width(el) {
           return el.dataset.width;
         },
-        duration: 800,
+        duration: 600,
         easing: 'easeInExpo',
         delay(el, index) {
-          return index * 100;
+          return index * 150;
         }
       });
       this.destroy();
     },
     offset() {
-      return 700;
+      return 1000;
     }
   });
 
