@@ -8,6 +8,7 @@
       setTimeout(() => {
         particle();
         $('.intro__particle').addClass('is-active');
+        $('.scroll').addClass('is-active');
       }, 1000);
     }
   });
