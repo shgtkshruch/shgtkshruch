@@ -5,5 +5,8 @@
     font-size: 34px;
     text-align: center;
     text-transform: uppercase;
+    &--intro {
+      display: none;
+    }
   }
 }
