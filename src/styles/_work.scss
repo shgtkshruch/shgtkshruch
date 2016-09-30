@@ -51,6 +51,7 @@
     &::after {
       bottom: $diff;
       right: $diff-x;
+      transition-delay: .1s;
     }
     @media (min-width: $screen-sm) {
       &:hover {
