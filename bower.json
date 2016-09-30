@@ -1,7 +1,8 @@
 {
   "name": "shgtkshruch",
   "dependencies": {
+    "jquery": "^3.1.1",
     "typed.js": "^1.1.4",
-    "jquery": "^3.1.1"
+    "normalize-css": "normalize.css#^4.2.0"
   }
 }
