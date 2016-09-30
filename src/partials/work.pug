@@ -1,0 +1,14 @@
+section.section
+  .l-container
+    h1.section__heading works
+  ul.work
+    - works = {};
+    - works[0] = {title: 'schoo tours'};
+    - works[1] = {title: 'Feed Pocket'};
+    - works[2] = {title: 'timeline'};
+    - works[3] = {title: 'ballxball'};
+    each work, i in works
+      li.work__item
+        a.work__title(href="#")= work.title
+
+

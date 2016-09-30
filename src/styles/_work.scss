@@ -1,0 +1,64 @@
+.work {
+  &__item {
+    position: relative;
+    height: 200px;
+    background-image: url('https://unsplash.it/1920/300/?random');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: background-size .5s;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, .3);
+      pointer-events: none;
+    }
+  }
+  &__title {
+    $diff: 50px;
+    $diff-x: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    line-height: 200px;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    z-index: 2;
+    @media (min-width: $screen-sm) {
+      font-size: 50px;
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      background-color: #fff;
+      transition: width .4s;
+    }
+    &::before {
+      top: $diff;
+      left: $diff-x;
+    }
+    &::after {
+      bottom: $diff;
+      right: $diff-x;
+    }
+    @media (min-width: $screen-sm) {
+      &:hover {
+        &::before,
+        &::after {
+          width: (100% - $diff-x * 2);
+        }
+      }
+    }
+  }
+}

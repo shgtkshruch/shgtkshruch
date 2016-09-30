@@ -1,14 +1,15 @@
 section.section
-  h1.section__heading timeline
-  ol.timeline
-    - timeline = {};
-    - timeline[0] = {age: 2011, title: 'dotinstall', text: 'はじめてプログラミングに触れる。しかし、この時はプログラミングの面白さがわからず、HTMLとCSSに少し触れただけで、プログラミングから離れてしまう。'}
-    - timeline[1] = {age: 2013, title: 'schoo', text: 'たまたま時間があったので、WordPressの授業を受ける。 自分が書いたコードがWebサイトに反映されることが面白くて、やっとプログラミングに熱中し始める。'}
-    - timeline[2] = {age: 2015, title: 'Lancers', text: '独学で勉強したことを活かして、実際にお仕事を受注する。「新しいiMacが欲しいからその金を貯めよう！」と物欲にかられてお仕事をはじめ、無事に新しいiMacをゲット。'}
-    - timeline[3] = {age: 2016, title: '超現場主義', text: '独学で勉強する以上に「さらにレベルアップしたい！」と思いたち、超現場主義の門をたたく。実践的なレッスンを受けて、フロンエンドエンジニアにクラスチェンジ。'}
-    each time, i in timeline
-      li.timeline__item
-        h2.timeline__heading
-          span.timeline__age= time.age
-          span.timeline__title= time.title
-        p.timeline__text= time.text
+  .l-container
+    h1.section__heading timeline
+    ol.timeline
+      - timeline = {};
+      - timeline[0] = {age: 2011, title: 'dotinstall', text: 'はじめてプログラミングに触れる。しかし、この時はプログラミングの面白さがわからず、HTMLとCSSに少し触れただけで、プログラミングから離れてしまう。'}
+      - timeline[1] = {age: 2013, title: 'schoo', text: 'たまたま時間があったので、WordPressの授業を受ける。 自分が書いたコードがWebサイトに反映されることが面白くて、やっとプログラミングに熱中し始める。'}
+      - timeline[2] = {age: 2015, title: 'Lancers', text: '独学で勉強したことを活かして、実際にお仕事を受注する。「新しいiMacが欲しいからその金を貯めよう！」と物欲にかられてお仕事をはじめ、無事に新しいiMacをゲット。'}
+      - timeline[3] = {age: 2016, title: '超現場主義', text: '独学で勉強する以上に「さらにレベルアップしたい！」と思いたち、超現場主義の門をたたく。実践的なレッスンを受けて、フロンエンドエンジニアにクラスチェンジ。'}
+      each time, i in timeline
+        li.timeline__item
+          h2.timeline__heading
+            span.timeline__age= time.age
+            span.timeline__title= time.title
+          p.timeline__text= time.text

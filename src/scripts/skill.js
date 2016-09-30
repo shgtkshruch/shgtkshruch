@@ -2,7 +2,7 @@
   'use strict';
 
   new Waypoint({
-    element: document.querySelector('.section:nth-child(2)'),
+    element: document.querySelector('.skill'),
     handler(diration) {
       anime({
         targets: '.skill__bar',
@@ -17,6 +17,9 @@
         }
       });
       this.destroy();
+    },
+    offset() {
+      return this.element.clientHeight / 2
     }
   });
 

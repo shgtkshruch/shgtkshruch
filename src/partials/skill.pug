@@ -1,15 +1,16 @@
 section.section
-  h1.section__heading skills
-  ul
-    - skills = {};
-    - skills[0] = {name: 'HTML5', percentage: 95};
-    - skills[1] = {name: 'CSS3', percentage: 90};
-    - skills[2] = {name: 'JavaScript', percentage: 85};
-    - skills[3] = {name: 'gulp', percentage: 90};
-    - skills[4] = {name: 'Git', percentage: 80};
-    - skills[5] = {name: 'WordPress', percentage: 85};
-    each skill, i in skills
-      li.skill
-        span.skill__name= skill.name
-        span.skill__bar(data-width=`${skill.percentage}%`)
-        span.skill__num= skill.percentage
+  .l-container
+    h1.section__heading skills
+    ul
+      - skills = {};
+      - skills[0] = {name: 'HTML5', percentage: 95};
+      - skills[1] = {name: 'CSS3', percentage: 90};
+      - skills[2] = {name: 'JavaScript', percentage: 85};
+      - skills[3] = {name: 'gulp', percentage: 90};
+      - skills[4] = {name: 'Git', percentage: 80};
+      - skills[5] = {name: 'WordPress', percentage: 85};
+      each skill, i in skills
+        li.skill
+          span.skill__name= skill.name
+          span.skill__bar(data-width=`${skill.percentage}%`)
+          span.skill__num= skill.percentage
