@@ -1,0 +1,113 @@
+.timeline {
+  $color: #ee4d4d;
+  $height: 40px;
+  $padding: 1em;
+  $line-width: 3px;
+  position: relative;
+  padding: 8em 0;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $line-width;
+    height: 0;
+    background-color: $color;
+    transition: height .5s;
+    @media (min-width: $screen-sm) {
+      left: calc(50% - #{$line-width} / 2);
+    }
+  }
+  &.is-active {
+    &::before {
+      height: 100%;
+    }
+    .timeline__item {
+      opacity: 1;
+    }
+  }
+  &__item {
+    $size: 15px;
+    $border-width: 3px;
+    position: relative;
+    padding-left: 2em;
+    opacity: 0;
+    transition: opacity .5s;
+    &:not(:last-child) {
+      margin-bottom: 3em;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      top: .8em;
+      left: ($size + $border-width * 2) * -1 / 2;
+      width: $size;
+      height: $size;
+      background-color: #fff;
+      border: 3px solid $color;
+      border-radius: 50%;
+    }
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: (0.5s + 0.25s * $i);
+      }
+    }
+    @media (min-width: $screen-sm) {
+      &:nth-child(odd) {
+        margin-left: 50%;
+      }
+      &:nth-child(even) {
+        margin-right: 50%;
+        padding-left: 0;
+        padding-right: 2em;
+        &::before {
+          left: unset;
+          right: ($size + $border-width * 2) * -1 / 2;
+        }
+        .timeline__heading {
+          padding-left: $padding;
+          @media (min-width: $screen-sm) {
+            &::before {
+              right: unset;
+              left: 100%;
+              border-right: unset;
+              border-left: $height / 3 solid $color;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__heading {
+    position: relative;
+    height: $height;
+    line-height: $height;
+    margin: 0;
+    padding-left: $padding;
+    background-color: $color;
+    color: #fff;
+    &::before {
+      content: '';
+      position: absolute;
+      top: $height / 3;
+      right: 100%;
+      border-top: $height / 3 solid transparent;
+      border-right: $height / 3 solid $color;
+      border-bottom: $height / 3 solid transparent;
+    }
+  }
+  &__age {
+    font-size: 14px;
+    padding-right: 1em;
+  }
+  &__title {
+    font-size: 20px;
+  }
+  &__text {
+    background-color: $color;
+    color: #fff;
+    margin: 0;
+    padding: $padding;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  }
+}
