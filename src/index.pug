@@ -19,10 +19,12 @@ html(lang="ja")
     // endbuild
   body
     .intro
+      #js-particles.intro__particle
       #js-typeString.intro__json
-        code
-          pre
+        pre
+          code
             .
+              package.json
               {
                 "name": "Shigetaka Shirouchi",
                 "version": "1.0.0",
@@ -49,6 +51,7 @@ html(lang="ja")
     // bower:js
     script(src='../bower_components/jquery/dist/jquery.js')
     script(src='../bower_components/typed.js/dist/typed.min.js')
+    script(src='../bower_components/particles.js/particles.min.js')
     // endbower
     // endbuild
     // build:js scripts/main.js

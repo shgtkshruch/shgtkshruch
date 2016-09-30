@@ -3,13 +3,32 @@
   width: 100%;
   height: 100vh;
   text-align: center;
+  background-color: #000;
+  transition: all 1s;
+  &.is-active {
+    &,
+    .intro__json {
+      background-color: #fff;
+      color: #000;
+    }
+  }
   &__json {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 1em;
     font-size: 16px;
     line-height: 1.4;
     text-align: left;
+    white-space: pre;
+    background-color: #000;
+    color: #fff;
+    transition: all 1s;
+  }
+  &__particle {
+    width: 100%;
+    height: 100vh;
+    transition: all 1s;
   }
 }
