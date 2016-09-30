@@ -1,10 +1,10 @@
 .timeline {
   $color: #ee4d4d;
   $height: 40px;
-  $padding: 1em;
+  $padding: 1.5rem;
   $line-width: 3px;
   position: relative;
-  padding: 8em 0;
+  padding: 8rem 0;
   &::before {
     content: '';
     position: absolute;
@@ -27,8 +27,7 @@
     }
   }
   &__item {
-    $size: 15px;
-    $border-width: 3px;
+    $size: 20px;
     position: relative;
     padding-left: 2em;
     opacity: 0;
@@ -40,7 +39,7 @@
       content: '';
       position: absolute;
       top: .8em;
-      left: ($size + $border-width * 2) * -1 / 2;
+      left: $size * -1 / 2;
       width: $size;
       height: $size;
       background-color: #fff;
@@ -62,7 +61,7 @@
         padding-right: 2em;
         &::before {
           left: unset;
-          right: ($size + $border-width * 2) * -1 / 2;
+          right: $size * -1 / 2;
         }
         .timeline__heading {
           padding-left: $padding;
@@ -97,11 +96,11 @@
     }
   }
   &__age {
-    font-size: 14px;
+    font-size: 12px;
     padding-right: 1em;
   }
   &__title {
-    font-size: 20px;
+    font-size: 22px;
   }
   &__text {
     background-color: $color;

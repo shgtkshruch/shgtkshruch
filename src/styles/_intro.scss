@@ -2,14 +2,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  text-align: center;
   background-color: #000;
-  transition: all 1s;
-  &.is-active {
-    &,
-    .intro__json {
-    }
-  }
   &__json {
     position: absolute;
     top: 50%;
@@ -22,7 +15,9 @@
     white-space: pre;
     background-color: #000;
     color: #fff;
-    transition: all 1s;
+    @media (min-width: $screen-sm) {
+      font-size: 20px;
+    }
   }
   &__particle {
     width: 100%;

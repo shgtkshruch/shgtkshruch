@@ -7,7 +7,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    transition: background-size .5s;
     @media (min-width: $screen-sm) {
       height: 300px;
     }
@@ -23,7 +22,7 @@
     }
   }
   &__title {
-    $diff: 50px;
+    $diff-y: 50px;
     $diff-x: 30%;
     position: absolute;
     top: 50%;
@@ -45,16 +44,16 @@
       content: '';
       position: absolute;
       width: 0;
-      height: 1px;
+      height: 2px;
       background-color: #fff;
       transition: width .4s;
     }
     &::before {
-      top: $diff;
+      top: $diff-y;
       left: $diff-x;
     }
     &::after {
-      bottom: $diff;
+      bottom: $diff-y;
       right: $diff-x;
       transition-delay: .1s;
     }
