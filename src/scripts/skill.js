@@ -9,21 +9,10 @@
         width(el) {
           return el.dataset.width;
         },
-        duration: 1000,
-        easing: 'easeInOutExpo',
-        elasticity: 1000,
+        duration: 800,
+        easing: 'easeInExpo',
         delay(el, index) {
-          return index * 200;
-        },
-        begin() {
-          console.log('begin');
-          anime({
-            targets: '.skill__num',
-            scale: {
-              value: 2,
-              duration: 500
-            }
-          });
+          return index * 100;
         }
       });
       this.destroy();
