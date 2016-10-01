@@ -30,6 +30,7 @@
     $size: 20px;
     position: relative;
     padding-left: 2em;
+    color: #fff;
     opacity: 0;
     transition: opacity .5s;
     &:not(:last-child) {
@@ -83,7 +84,6 @@
     margin: 0;
     padding-left: $padding;
     background-color: $color;
-    color: #fff;
     &::before {
       content: '';
       position: absolute;
@@ -103,7 +103,6 @@
   }
   &__text {
     background-color: $color;
-    color: #fff;
     margin: 0;
     padding: 0 $padding $padding;
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);

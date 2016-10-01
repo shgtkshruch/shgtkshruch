@@ -5,17 +5,7 @@
     height: $height;
     transition: height .3s;
     &:not(:last-child) {
-      border-bottom: 2px solid #fff;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #eee;
-      z-index: -1;
+      margin-bottom: 2px;
     }
     @media (min-width: $screen-sm) {
       height: 80px;
