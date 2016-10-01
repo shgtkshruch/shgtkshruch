@@ -3,10 +3,7 @@
   &__item {
     position: relative;
     height: $height;
-    background-image: url('https://unsplash.it/1920/300/?random');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    overflow: hidden;
     @media (min-width: $screen-sm) {
       height: 300px;
     }
@@ -19,6 +16,11 @@
       height: 100%;
       background-color: rgba(0, 0, 0, .3);
       pointer-events: none;
+    }
+    &:hover {
+      .work__img {
+        transform: scale(1.1);
+      }
     }
   }
   &__title {
@@ -65,5 +67,8 @@
         }
       }
     }
+  }
+  &__img {
+    transition: transform .3s;
   }
 }
