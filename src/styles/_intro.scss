@@ -13,6 +13,10 @@
     text-align: left;
     white-space: pre;
     color: #fff;
+    &::after {
+      content: '|';
+      animation: blink 1.2s infinite;
+    }
     @media (min-width: $screen-sm) {
       font-size: 20px;
       height: (20px * 1.4 * 21);
@@ -27,4 +31,9 @@
       opacity: 1;
     }
   }
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
 }
