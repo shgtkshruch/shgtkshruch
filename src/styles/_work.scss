@@ -4,6 +4,7 @@
     position: relative;
     height: $height;
     overflow: hidden;
+    transform: translateY(300%);
     @media (min-width: $screen-sm) {
       height: 300px;
     }
