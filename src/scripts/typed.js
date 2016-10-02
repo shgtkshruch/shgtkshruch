@@ -1,8 +1,10 @@
 (() => {
   'use strict';
 
+  const $typeString = $('#js-typeString');
+
   $('#js-typeOut').typed({
-    stringsElement: $('#js-typeString'),
+    stringsElement: $typeString,
     showCursor: false,
     callback() {
       setTimeout(() => {
@@ -11,7 +13,7 @@
         $('.scroll').addClass('is-active');
       }, 1000);
     }
-  });
+  }).css({width: $typeString.width()});
 
   function particle() {
     particlesJS('js-particles',
