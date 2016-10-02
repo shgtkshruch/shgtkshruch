@@ -1,5 +1,8 @@
 .section {
-  padding: 100px 0;
+  padding: 50px 0;
+  @media (min-width: $screen-sm) {
+    padding: 100px 0;
+  }
   &__heading {
     position: relative;
     margin: 0 0 60px;
