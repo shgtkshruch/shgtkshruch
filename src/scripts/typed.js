@@ -5,12 +5,14 @@
 
   $('#js-typeOut').typed({
     stringsElement: $typeString,
-    startDelay: 3000,
+    startDelay: 1000,
     showCursor: false,
     callback() {
-      particle();
-      $('.intro__particle').addClass('is-active');
-      $('.scroll').addClass('is-active');
+      setTimeout(() => {
+        particle();
+        $('.intro__particle').addClass('is-active');
+        $('.scroll').addClass('is-active');
+      }, 1000);
     }
   }).css({width: $typeString.width()});
 

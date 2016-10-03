@@ -6,7 +6,7 @@
     padding: $padding-top $padding-left;
     background-color: #ddd;
     border-radius: 5px;
-    transform: translateY(300%);
+    transform: translateY(200%);
     &:not(:last-child) {
       margin-bottom: 3rem;
       @media (min-width: $screen-sm) {
