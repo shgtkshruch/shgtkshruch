@@ -3,12 +3,12 @@
   text-align: center;
   &__item {
     display: inline-block;
-    margin: 0 20px 40px;
-    font-size: 50px;
+    margin: 0 2rem 4rem;
+    font-size: 5rem;
     opacity: 0;
   }
   &__icon {
-    $size: 90px;
+    $size: 9rem;
     position: relative;
     width: $size;
     height: $size;

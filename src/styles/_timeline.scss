@@ -1,8 +1,8 @@
 .timeline {
   $color: #4cb8c4;
-  $triangle-height: 15px;
+  $triangle-height: 1.5rem;
   $padding: 1.5rem;
-  $dot-size: 20px;
+  $dot-size: 2rem;
   position: relative;
   padding: 8rem 0;
   &::before {
@@ -31,7 +31,6 @@
   &__item {
     position: relative;
     padding-left: 2em;
-    color: #fff;
     opacity: 0;
     transition: opacity .5s, transform .5s;
     transform: scale(0.7);
@@ -46,7 +45,7 @@
     @media (min-width: $screen-sm) {
       &:hover .timeline__dot {
         &::after {
-          animation-name: blink;
+          animation-name: ripple;
           animation-duration: 1.5s;
           animation-iteration-count: infinite;
         }
@@ -64,13 +63,11 @@
         }
         .timeline__heading {
           padding-left: $padding;
-          @media (min-width: $screen-sm) {
-            &::before {
-              right: unset;
-              left: 100%;
-              border-right: unset;
-              border-left: $triangle-height solid $color;
-            }
+          &::before {
+            right: unset;
+            left: 100%;
+            border-right: unset;
+            border-left: $triangle-height solid $color;
           }
         }
       }
@@ -83,7 +80,7 @@
     display: inline-block;
     width: $dot-size;
     height: $dot-size;
-    background-color: #fff;
+    background-color: currentcolor;
     border: 3px solid $color;
     border-radius: 50%;
     &::after {
@@ -94,7 +91,7 @@
       width: 100%;
       height: 100%;
       transform: translate(-50%, -50%);
-      border: 2px solid #fff;
+      border: 2px solid;
       border-radius: 50%;
       z-index: -1;
     }
@@ -116,11 +113,11 @@
     }
   }
   &__age {
-    font-size: 12px;
+    font-size: 1.2rem;
     padding-right: 1em;
   }
   &__title {
-    font-size: 22px;
+    font-size: 2.2rem;
   }
   &__text {
     background-color: $color;
@@ -130,7 +127,7 @@
   }
 }
 
-@keyframes blink {
+@keyframes ripple {
   100% {
     width: 50px;
     height: 50px;

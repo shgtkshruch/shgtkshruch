@@ -1,5 +1,5 @@
 .skill {
-  $height: 40px;
+  $height: 4rem;
   &__item {
     position: relative;
     height: $height;
@@ -8,9 +8,9 @@
       margin-bottom: 2px;
     }
     @media (min-width: $screen-sm) {
-      height: 50px;
+      height: 5rem;
       &:hover {
-        height: 200px;
+        height: 20rem;
         .skill__name {
           opacity: 0;
         }
@@ -35,7 +35,7 @@
     right: 0%;
     transform: translate(-20%, -50%);
     color: #fff;
-    font-size: 150px;
+    font-size: 15rem;
     opacity: 0;
     transition: opacity .3s;
   }
@@ -45,7 +45,6 @@
     left: 1rem;
     transform: translateY(-50%);
     font-size: 2rem;
-    color: #fff;
     transition: all .3s;
   }
   &__bar {
@@ -76,7 +75,6 @@
     left: 5%;
     transform: translateY(-50%);
     width: 90%;
-    color: #fff;
     transition: opacity .3s;
     @media (min-width: $screen-sm) {
       display: block;

@@ -7,19 +7,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.4;
     height: (16px * 1.4 * 21);
     text-align: left;
     white-space: pre;
-    color: #fff;
     &::after {
       content: '|';
       animation: blink 1.2s infinite;
     }
     @media (min-width: $screen-sm) {
-      font-size: 20px;
-      height: (20px * 1.4 * 21);
+      font-size: 2rem;
+      height: (2rem * 1.4 * 21);
     }
   }
   &__particle {

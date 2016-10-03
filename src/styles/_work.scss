@@ -31,17 +31,17 @@
     }
   }
   &__btn {
-    $size: 10px;
+    $size: 1rem;
     $space: 1.7rem;
     position: absolute;
-    top: calc(#{$padding-top} / 2 - 5px);
+    top: #{$padding-top} / 2 - #{$size} / 2;
     left: calc(#{$padding-left} + #{$space});
     width: $size;
     height: $size;
     border-radius: 50%;
     background-color: #ffc873;
     @media (min-width: $screen-sm) {
-      top: calc(3rem / 2 - 5px);
+      top: 3rem / 2 - $size / 2;
     }
     &::before,
     &::after {
@@ -98,7 +98,7 @@
       position: absolute;
       width: 0;
       height: 5px;
-      background-color: #fff;
+      background-color: currentcolor;
       transition: width .3s;
     }
     &::before {
