@@ -5,6 +5,7 @@
 
   $('#js-typeOut').typed({
     stringsElement: $typeString,
+    startDelay: 3000,
     showCursor: false,
     callback() {
       particle();
