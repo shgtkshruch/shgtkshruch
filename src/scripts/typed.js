@@ -7,11 +7,9 @@
     stringsElement: $typeString,
     showCursor: false,
     callback() {
-      setTimeout(() => {
-        particle();
-        $('.intro__particle').addClass('is-active');
-        $('.scroll').addClass('is-active');
-      }, 1000);
+      particle();
+      $('.intro__particle').addClass('is-active');
+      $('.scroll').addClass('is-active');
     }
   }).css({width: $typeString.width()});
 
