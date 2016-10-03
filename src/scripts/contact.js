@@ -1,23 +1,19 @@
 (() => {
   'use strict';
 
-  new Waypoint({
-    element: document.querySelector('.contact'),
-    handler(diration) {
-      anime({
-        targets: '.contact__item',
-        rotateY: 360,
-        opacity: 1,
-        duration: 3000,
-        delay(el, index) {
-          return index * 250;
-        }
-      });
-      this.destroy();
-    },
-    offset() {
-      return 800;
-    }
+  $('.contact').waypoint(function (diration) {
+    anime({
+      targets: '.contact__item',
+      rotateY: 360,
+      opacity: 1,
+      duration: 3000,
+      delay(el, index) {
+        return index * 250;
+      }
+    });
+    this.destroy();
+  }, {
+    offset: '80%'
   });
 
   const $title = $('.contact').siblings('.section__heading')
