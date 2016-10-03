@@ -2,15 +2,17 @@ section.section
   .l-container
     h1.section__heading
       span.section__headingInner works
-  ul.work
-    - works = {};
-    - works[0] = {title: 'schoo tours'};
-    - works[1] = {title: 'Feed Pocket'};
-    - works[2] = {title: 'timeline'};
-    - works[3] = {title: 'ballxball'};
-    each work, i in works
-      li.work__item
-        a.work__title(href="#")= work.title
-        img.work__img(src="https://unsplash.it/1920/300/?image=547")
+    ul.work
+      - works = {};
+      - works[0] = {title: 'schoo tours', src: "schoo-tours.png"};
+      - works[1] = {title: 'Feed Pocket', src: "feed-pocket.png"};
+      - works[2] = {title: 'timeline', src: "timeline.png"};
+      - works[3] = {title: 'ballxball', src: "ballxball.png"};
+      each work, i in works
+        li.work__item
+          span.work__btn
+          a.work__link(href="#")
+            span.work__title= work.title
+            img.work__img(src=`images/${work.src}` alt=`screenshot of ${work.title}`)
 
 

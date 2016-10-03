@@ -1,13 +1,66 @@
 .work {
-  $height: 200px;
+  $padding-top: 2rem;
+  $padding-left: .7rem;
   &__item {
     position: relative;
-    height: $height;
-    overflow: hidden;
+    padding: $padding-top $padding-left;
+    background-color: #ddd;
+    border-radius: 5px;
     transform: translateY(300%);
-    @media (min-width: $screen-sm) {
-      height: 300px;
+    &:not(:last-child) {
+      margin-bottom: 3rem;
     }
+    @media (min-width: $screen-sm) {
+      padding-top: 3rem;
+      &:hover {
+        .work__link::after,
+        .work__title {
+          opacity: 1;
+        }
+        .work__title {
+          top: 50%;
+          &::before,
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  &__btn {
+    $size: 10px;
+    $space: 1.7rem;
+    position: absolute;
+    top: calc(#{$padding-top} / 2 - 5px);
+    left: calc(#{$padding-left} + #{$space});
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    background-color: #ffc873;
+    @media (min-width: $screen-sm) {
+      top: calc(3rem / 2 - 5px);
+    }
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+    }
+    &::before {
+      left: $space * -1;
+      background-color: #ff6c73;
+    }
+    &::after {
+      left: $space;
+      background-color: #76ca90;
+    }
+  }
+  &__link {
+    position: relative;
+    display: block;
     &::after {
       content: '';
       position: absolute;
@@ -15,70 +68,45 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, .3);
-      pointer-events: none;
-    }
-    @media (min-width: $screen-sm) {
-      &:hover {
-        .work__img {
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-      }
+      background-color: rgba(0, 0, 0, .5);
+      opacity: 0;
+      transition: opacity .3s;
     }
   }
   &__title {
-    $diff-y: 50px;
-    $diff-x: 30%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    line-height: $height;
-    color: #fff;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: .1em;
+    padding: .5em 0;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 1.2;
     text-transform: uppercase;
-    z-index: 2;
-    @media (min-width: $screen-sm) {
-      font-size: 50px;
-      letter-spacing: .3em;
-      line-height: 300px;
-    }
+    letter-spacing: .2em;
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .3s, top .3s;
     &::before,
     &::after {
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
+      height: 5px;
       background-color: #fff;
-      transition: width .4s;
+      transition: width .3s;
     }
     &::before {
-      top: $diff-y;
-      left: $diff-x;
+      top: 0;
+      left: 0;
+      transition-delay: .3s;
     }
     &::after {
-      bottom: $diff-y;
-      right: $diff-x;
-      transition-delay: .1s;
+      bottom: 0;
+      right: 0;
+      transition-delay: .4s;
     }
-    @media (min-width: $screen-sm) {
-      &:hover {
-        &::before,
-        &::after {
-          width: (100% - $diff-x * 2);
-        }
-      }
-    }
-  }
-  &__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform .3s;
   }
 }
