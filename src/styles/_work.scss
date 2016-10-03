@@ -9,6 +9,9 @@
     transform: translateY(300%);
     &:not(:last-child) {
       margin-bottom: 3rem;
+      @media (min-width: $screen-sm) {
+        margin-bottom: 6rem;
+      }
     }
     @media (min-width: $screen-sm) {
       padding-top: 3rem;
