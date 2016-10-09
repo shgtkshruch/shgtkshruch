@@ -72,17 +72,19 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, .5);
-      opacity: 0;
       transition: opacity .3s;
+      @media (min-width: $screen-sm) {
+        opacity: 0;
+      }
     }
   }
   &__title {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: .5em 0;
-    font-size: 50px;
+    padding: 1em 0;
+    font-size: 4vw;
     font-weight: bold;
     line-height: 1.2;
     text-transform: uppercase;
@@ -90,16 +92,25 @@
     text-align: center;
     color: #fff;
     z-index: 1;
-    opacity: 0;
-    transition: opacity .3s, top .3s;
+    @media (min-width: $screen-sm) {
+      top: 60%;
+      padding: .5em 0;
+      font-size: 50px;
+      white-space: nowrap;
+      transition: opacity .3s, top .3s;
+      opacity: 0;
+    }
     &::before,
     &::after {
       content: '';
       position: absolute;
-      width: 0;
+      width: 100%;
       height: 5px;
       background-color: currentcolor;
       transition: width .3s;
+      @media (min-width: $screen-sm) {
+        width: 0;
+      }
     }
     &::before {
       top: 0;
