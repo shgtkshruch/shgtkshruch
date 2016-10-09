@@ -1,0 +1,69 @@
+.slick {
+  $size: 80px;
+  $width-border: 20px;
+  &-dots li {
+    button::before {
+      color: #fff;
+      opacity: .50;
+    }
+    &.slick-active button::before {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+  &-arrow {
+    display: none;
+    @media (min-width: 1400px) {
+      display: block;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 50%;
+        height: 50%;
+        opacity: 1;
+        border-top: $width-border solid transparent;
+        border-bottom: $width-border solid transparent;
+      }
+    }
+  }
+  &-prev {
+    @media (min-width: 1400px) {
+      left: -100px;
+      &::before,
+      &::after {
+        transform: translate(-80%, -50%);
+      }
+      &::before {
+        border-right: $width-border solid #fff;
+      }
+      &::after {
+        left: calc(50% + 2px);
+        border-right: $width-border solid #222;
+      }
+    }
+
+  }
+  &-next {
+    @media (min-width: 1400px) {
+      right: -100px;
+      &::before,
+      &::after {
+        transform: translate(-20%, -50%);
+      }
+      &::before {
+        border-left: $width-border solid #fff;
+      }
+      &::after {
+        left: calc(50% - 2px);
+        border-left: $width-border solid #222;
+      }
+    }
+  }
+}

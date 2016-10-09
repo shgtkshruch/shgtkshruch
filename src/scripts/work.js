@@ -1,18 +1,23 @@
 (() => {
   'use strict';
 
-  $('.work').waypoint(function (diration) {
+  $('.section--work').waypoint(function (diration) {
     anime({
-      targets: '.work__item',
+      targets: '.work',
       translateY: ['200%', 0],
-      duration: 1000,
-      delay(el, index) {
-        return index * 250;
-      }
+      duration: 2000
     });
     this.destroy();
   }, {
-    offset: '50%'
+    offset: '30%'
   });
+
+  $('#js-slick').slick({
+    slidesToShow: 1,
+    dots: true,
+    prevArrow: '.slick-prev',
+    nextArrow: '.slick-next',
+  });
+
 
 })();
