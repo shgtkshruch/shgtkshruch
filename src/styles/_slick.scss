@@ -13,12 +13,15 @@
   }
   &-arrow {
     display: none;
-    @media (min-width: 1400px) {
+    @media (min-width: $screen-sm) {
       display: block;
       width: $size;
       height: $size;
       border-radius: 50%;
-      border: 2px solid #fff;
+      background-color: $color-green;
+      &:hover {
+        background-color: $color-green;
+      }
       &::before,
       &::after {
         content: '';
@@ -34,8 +37,8 @@
     }
   }
   &-prev {
-    @media (min-width: 1400px) {
-      left: -100px;
+    @media (min-width: $screen-sm) {
+      left: 10%;
       &::before,
       &::after {
         transform: translate(-80%, -50%);
@@ -45,14 +48,14 @@
       }
       &::after {
         left: calc(50% + 2px);
-        border-right: $width-border solid #222;
+        border-right: $width-border solid $color-green;
       }
     }
 
   }
   &-next {
-    @media (min-width: 1400px) {
-      right: -100px;
+    @media (min-width: $screen-sm) {
+      right: 10%;
       &::before,
       &::after {
         transform: translate(-20%, -50%);
@@ -62,7 +65,7 @@
       }
       &::after {
         left: calc(50% - 2px);
-        border-left: $width-border solid #222;
+        border-left: $width-border solid $color-green;
       }
     }
   }

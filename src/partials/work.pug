@@ -2,21 +2,21 @@ section.section.section--work
   .l-container
     h1.section__heading
       span.section__headingInner works
-    .work
-      ul#js-slick
-        - works = {};
-        - works[0] = {title: 'schoo tours', src: "schoo-tours.png"};
-        - works[1] = {title: 'Feed Pocket', src: "feed-pocket.png"};
-        - works[2] = {title: 'timeline', src: "timeline.png"};
-        - works[3] = {title: 'ballxball', src: "ballxball.png"};
-        each work, i in works
-          li.work__item
-            span.work__btn
-            a.work__link(href="#")
-              span.work__title= work.title
-              img.work__img(src=`images/${work.src}` alt=`screenshot of ${work.title}`)
-      span.slick-arrow.slick-prev
-      span.slick-arrow.slick-next
+  .work
+    ul#js-slick
+      - works = {};
+      - works[0] = {title: 'schoo tours', src: "schoo-tours.png"};
+      - works[1] = {title: 'Feed Pocket', src: "feed-pocket.png"};
+      - works[2] = {title: 'timeline', src: "timeline.png"};
+      - works[3] = {title: 'ballxball', src: "ballxball.png"};
+      each work, i in works
+        li.work__item
+          span.work__btn
+          a.work__link(href="#")
+            span.work__title= work.title
+            img.work__img(src=`images/${work.src}` alt=`screenshot of ${work.title}`)
+    span.slick-arrow.slick-prev
+    span.slick-arrow.slick-next
 
 
 

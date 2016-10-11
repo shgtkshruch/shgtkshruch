@@ -14,9 +14,17 @@
 
   $('#js-slick').slick({
     slidesToShow: 1,
+    centerMode: true,
+    centerPadding: '25%',
     dots: true,
     prevArrow: '.slick-prev',
     nextArrow: '.slick-next',
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        centerMode: false
+      }
+    }]
   });
 
 
