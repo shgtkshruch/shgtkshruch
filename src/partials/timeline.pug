@@ -1,6 +1,6 @@
 section.section
   .l-container
-    h1.section__heading
+    h2.section__heading
       span.section__headingInner timeline
     ol.timeline
       - timeline = {};
@@ -11,7 +11,7 @@ section.section
       each time, i in timeline
         li.timeline__item
           span.timeline__dot
-          h2.timeline__heading
+          h3.timeline__heading
             span.timeline__age= time.age
             span.timeline__title= time.title
           p.timeline__text= time.text
