@@ -9,7 +9,7 @@
     }
     @media (min-width: $screen-sm) {
       height: 5rem;
-      &:hover {
+      &.is-active:hover {
         height: 20rem;
         .skill__name {
           opacity: 0;
