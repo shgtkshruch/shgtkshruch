@@ -1,49 +1,12 @@
-doctype html
-html(lang="ja")
-  head
-    meta(charset='UTF-8')
-    title shgtkshruch
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
-    meta(name='author', content='shigetaka shirouchi')
-    meta(name='description', content='portfolio site of shigetaka shirouchi')
-    meta(name='keywords', content='keywords')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='format-detection', content='telephone=no')
+extends layout
 
-    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css', media='all')
-    link(rel='stylesheet', href='https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css', media='all')
-    // build:css styles/vendor.css
-    // bower:css
-    link(rel='stylesheet', href='../bower_components/normalize-css/normalize.css')
-    link(rel='stylesheet', href='../bower_components/slick-carousel/slick/slick.css')
-    link(rel='stylesheet', href='../bower_components/slick-carousel/slick/slick-theme.css')
-    // endbower
-    // endbuild
-    // build:css styles/main.css
-    link(rel='stylesheet', href='styles/main.css', media='all')
-    // endbuild
-  body
-    main
-      include partials/intro
-      include partials/timeline
-      include partials/skill
-      include partials/work
-      include partials/contact
+block title
+  shgtkshruch
 
-    // build:js scripts/vendor.js
-    // bower:js
-    script(src='../bower_components/jquery/dist/jquery.js')
-    script(src='../bower_components/typed.js/dist/typed.min.js')
-    script(src='../bower_components/particles.js/particles.js')
-    script(src='../bower_components/animejs/anime.js')
-    script(src='../bower_components/waypoints/lib/jquery.waypoints.min.js')
-    script(src='../bower_components/slick-carousel/slick/slick.min.js')
-    // endbower
-    // endbuild
-    // build:js scripts/main.js
-    script(src='scripts/typed.js')
-    script(src='scripts/skill.js')
-    script(src='scripts/timeline.js')
-    script(src='scripts/work.js')
-    script(src='scripts/contact.js')
-    // endbuild
+block body
+  main
+    include partials/intro
+    include partials/timeline
+    include partials/skill
+    include partials/work
+    include partials/contact

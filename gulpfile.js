@@ -28,7 +28,7 @@ gulp.task('browserSync', () => {
 });
 
 gulp.task('wiredep', () => {
-  return gulp.src('src/index.pug')
+  return gulp.src('src/layout.pug')
     .pipe(wiredep())
     .pipe(gulp.dest('src'));
 });
