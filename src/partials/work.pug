@@ -5,14 +5,14 @@ section.section.section--work
   .work
     ul#js-slick
       - works = {};
-      - works[0] = {title: 'schoo tours', src: "schoo-tours.png"};
-      - works[1] = {title: 'Feed Pocket', src: "feed-pocket.png"};
-      - works[2] = {title: 'timeline', src: "timeline.png"};
-      - works[3] = {title: 'ballxball', src: "ballxball.png"};
+      - works[0] = {title: 'schoo tours', src: "schoo-tours.png", link: 'schoo-tours.html'};
+      - works[1] = {title: 'Feed Pocket', src: "feed-pocket.png", link: '#'};
+      - works[2] = {title: 'timeline', src: "timeline.png", link: '#'};
+      - works[3] = {title: 'ballxball', src: "ballxball.png", link: '#'};
       each work, i in works
         li.work__item
           span.work__btn
-          a.work__link(href="#")
+          a.work__link(href=`${work.link}`)
             span.work__title= work.title
             img.work__img(src=`images/${work.src}` alt=`screenshot of ${work.title}`)
     span.slick-arrow.slick-prev

@@ -83,7 +83,7 @@ gulp.task('sass', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src('src/scripts/*.js')
+  return gulp.src('src/scripts/**/*.js')
     .pipe($.plumber())
     .pipe($.changed('dist', {
       extension: '.js'
@@ -96,7 +96,7 @@ gulp.task('js', () => {
 });
 
 gulp.task('image', () => {
-  return gulp.src('src/images/*')
+  return gulp.src('src/images/**/*')
     .pipe($.imagemin({
       progressive: true,
       interlaced: true
@@ -123,9 +123,9 @@ gulp.task('ghpages', () => {
 
 gulp.task('watch', () => {
   gulp.watch('src/**/*.pug', ['pug']);
-  gulp.watch('src/styles/*.scss', ['sass']);
-  gulp.watch('src/scripts/*.js', ['js']);
-  gulp.watch('src/images/*', ['image']);
+  gulp.watch('src/styles/**/*.scss', ['sass']);
+  gulp.watch('src/scripts/**/*.js', ['js']);
+  gulp.watch('src/images/**/*', ['image']);
 });
 
 gulp.task('default', (cb) => {

@@ -1,0 +1,85 @@
+.screenshot {
+  $root: &;
+  &--schoo-tours {
+    #{$root}__point {
+      &:nth-of-type(1) {
+        top: 4%;
+        right: 22%;
+      }
+      &:nth-of-type(2) {
+        top: 12.4%;
+        right: 56.9%;
+      }
+      &:nth-of-type(3) {
+        top: 46.4%;
+        right: 48.9%;
+      }
+      &:nth-of-type(4) {
+        top: 82%;
+        right: 26%;
+      }
+    }
+  }
+  &__container {
+    position: relative;
+  }
+  &__point {
+    position: absolute;
+    display: none;
+    @media (min-width: $screen-sm) {
+      display: block;
+    }
+  }
+  &__icon {
+    $size: 40px;
+    display: block;
+    width: $size;
+    height: $size;
+    background-color: $color-blue;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px 2px rgba(0, 0, 0, .2);
+    &:not(.is-active)::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0%;
+      height: 0%;
+      border: 3px solid $color-blue;
+      border-radius: 50%;
+      animation-name: ripple2;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+    }
+  }
+  &__fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.0rem;
+    #{$root}__icon.is-active & {
+      top: 2rem;
+      left: 2rem;
+    }
+  }
+  &__desc {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+}
+
+@keyframes ripple2 {
+  $size: 100px;
+  100% {
+    width: $size;
+    height: $size;
+    opacity: 0;
+  }
+}
