@@ -10,20 +10,16 @@ block body
 
   .screenshot.screenshot--schoo-tours
     .l-container.screenshot__container
-      img.screenshot__img(src="images/schoo-tours/screenshot.jpg" alt="screenshot")
+      .screenshot__img
+        img(src="images/schoo-tours/screenshot.jpg" alt="screenshot")
+      .screenshot__points
+        - var points = [];
+        - points[0] = {title: 'スライドショー', text: 'プラグインを用いずにスライドショーの実装を行いました。'};
+        - points[1] = {title: 'SVGアニメーション', text: 'SVGのラインアニメーションと共にアイコンが浮き出てくる動きを作りました。Lazy Line Painterを用いました。'};
+        - points[2] = {title: 'ライトボックス', text: '画像のクリックすると上品なアニメーションと共にライトボックスが開きます。こちらもプラグインを用いずに実装しました。'};
+        - points[3] = {title: 'google map', text: 'サイトのデザインにマッチするように、google mapの配色をカスタマイズしてデザインを調和させました。またスクロールしてくると、マップのピンが上から落ちてくるアニメーションも加えました。'};
 
-      - var points = [];
-      - points[0] = {title: 'スライドショー', text: 'プラグインを用いずにスライドショーの実装を行いました。'};
-      - points[1] = {title: 'SVGアニメーション', text: 'SVGのラインアニメーションと共にアイコンが浮き出てくる動きを作りました。Lazy Line Painterを用いました。'};
-      - points[2] = {title: 'ライトボックス', text: '画像のクリックすると上品なアニメーションと共にライトボックスが開きます。こちらもプラグインを用いずに実装しました。'};
-      - points[3] = {title: 'google map', text: 'サイトのデザインにマッチするように、google mapの配色をカスタマイズしてデザインを調和させました。またスクロールしてくると、マップのピンが上から落ちてくるアニメーションも加えました。'};
-
-      each point in points
-        .screenshot__point
-          span.screenshot__icon.js-point-icon
-            i.screenshot__fa.fa.fa-flag
-          .screenshot__desc
-            h3.screenshot__title= point.title
-            p.screenshot__text= point.text
-          .screenshot__close.js-close
-            .screenshot__closeText close
+        each point in points
+          .screenshot__point.js-point
+            .screenshot__desc
+              p.screenshot__text= point.text

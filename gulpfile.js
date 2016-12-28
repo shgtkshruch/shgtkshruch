@@ -34,12 +34,12 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('html', ['pug', 'sass', 'js'], () => {
-  return gulp.src('dist/index.html')
+  return gulp.src('dist/*.html')
     .pipe($.useref())
     .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe($.if('*.css', $.uncss({
       html: ['dist/*.html'],
-      ignore: [/.+is-active/]
+      ignore: [/.is-active/, /slick/]
     })))
     .pipe($.if('*.css', $.cleanCss()))
     .pipe($.if('*.js', $.uglify()))
@@ -111,6 +111,7 @@ gulp.task('clean:all', () => {
 gulp.task('clean:build', () => {
   return del([
     'dist/partials',
+    'dist/layout.html',
     'dist/{styles,scripts}/*',
     '!dist/{styles,scripts}/{main,vendor}.*',
   ]);
