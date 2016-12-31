@@ -23,3 +23,21 @@ block body
           .screenshot__point.js-point
             .screenshot__desc
               p.screenshot__text= point.text
+
+  .l-container
+    table.dataTable
+      - var data = [];
+      - data[0] = {th: '制作年', td: 2015};
+      - data[1] = {th: '製作期間', td: '1 week'};
+      - data[2] = {th: '担当', td: 'Design, Coding'};
+      - data[3] = {th: '使用技術', td: ['Jade', 'Sass', 'CoffeeScript', 'gulp', 'Git', 'VIM ', 'Photoshop']};
+      each d, i in data
+        tr.dataTable__row
+          th.dataTable__th= d.th
+          td.dataTable__td
+            if i === 3
+              each t in d.td
+                = t
+                br
+            else
+              = d.td
