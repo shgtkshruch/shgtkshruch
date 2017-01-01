@@ -12,7 +12,7 @@
     offset: '30%'
   });
 
-  $('#js-slick').slick({
+  $('.js-slick').slick({
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '25%',

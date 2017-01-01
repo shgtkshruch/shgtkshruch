@@ -1,0 +1,19 @@
+section.section.section--work
+  .l-container
+    h2.section__heading
+      span.section__headingInner commerce works
+  .work
+    ul.js-slick
+      - works = {};
+      - works[0] = {title: 'Hydro Power', src: "hydro-power.jpg", link: '#'};
+      - works[1] = {title: 'Aviva PRO', src: "aviva-pro.jpg", link: '#'};
+      - works[2] = {title: 'damborghini', src: "damborghini.jpg", link: '#'};
+      each work, i in works
+        li.work__item
+          span.work__btn
+          a.work__link(href=`${work.link}`)
+            span.work__title= work.title
+            img.work__img(src=`images/index/${work.src}` alt=`screenshot of ${work.title}`)
+    span.slick-arrow.slick-prev
+    span.slick-arrow.slick-next
+
