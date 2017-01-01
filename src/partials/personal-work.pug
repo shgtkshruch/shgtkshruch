@@ -1,9 +1,9 @@
-section.section.section--work
+section.section.section--personal-work
   .l-container
     h2.section__heading
       span.section__headingInner personal works
   .work
-    ul.js-slick
+    ul.js-slick-personal
       - works = {};
       - works[0] = {title: 'schoo tours', src: "schoo-tours.jpg", link: 'schoo-tours.html'};
       - works[1] = {title: 'Feed Pocket', src: "feed-pocket.jpg", link: '#'};
@@ -15,8 +15,8 @@ section.section.section--work
           a.work__link(href=`${work.link}`)
             span.work__title= work.title
             img.work__img(src=`images/index/${work.src}` alt=`screenshot of ${work.title}`)
-    span.slick-arrow.slick-prev
-    span.slick-arrow.slick-next
+    span.slick-arrow.slick-prev.js-slick-prev--personal
+    span.slick-arrow.slick-next.js-slick-next--personal
 
 
 

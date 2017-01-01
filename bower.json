@@ -6,7 +6,6 @@
     "normalize-css": "normalize.css#^4.2.0",
     "particles.js": "^2.0.0",
     "animejs": "^1.1.1",
-    "waypoints": "^4.0.1",
     "slick-carousel": "^1.6.0",
     "in-view": "*"
   }

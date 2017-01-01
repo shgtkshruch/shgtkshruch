@@ -1,20 +1,18 @@
 (() => {
   'use strict';
 
-  $('.contact').waypoint(function (diration) {
-    anime({
-      targets: '.contact__item',
-      rotateY: 360,
-      opacity: 1,
-      duration: 3000,
-      delay(el, index) {
-        return index * 250;
-      }
+  inView('.contact')
+    .once('enter', () => {
+      anime({
+        targets: '.contact__item',
+        rotateY: 360,
+        opacity: 1,
+        duration: 3000,
+        delay(el, index) {
+          return index * 250;
+        }
+      });
     });
-    this.destroy();
-  }, {
-    offset: '80%'
-  });
 
   const $title = $('.contact').siblings('.section__heading')
   const $titleInner = $title.find('.section__headingInner');

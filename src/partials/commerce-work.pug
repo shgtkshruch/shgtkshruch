@@ -1,9 +1,9 @@
-section.section.section--work
+section.section.section--commerce-work
   .l-container
     h2.section__heading
       span.section__headingInner commerce works
   .work
-    ul.js-slick
+    ul.js-slick-commerce
       - works = {};
       - works[0] = {title: 'Hydro Power', src: "hydro-power.jpg", link: '#'};
       - works[1] = {title: 'Aviva PRO', src: "aviva-pro.jpg", link: '#'};
@@ -14,6 +14,6 @@ section.section.section--work
           a.work__link(href=`${work.link}`)
             span.work__title= work.title
             img.work__img(src=`images/index/${work.src}` alt=`screenshot of ${work.title}`)
-    span.slick-arrow.slick-prev
-    span.slick-arrow.slick-next
+    span.slick-arrow.slick-prev.js-slick-prev--commerce
+    span.slick-arrow.slick-next.js-slick-next--commerce
 
