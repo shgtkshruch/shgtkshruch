@@ -1,9 +1,41 @@
 .header {
+  position: relative;
   height: 100vh;
   text-align: center;
+  &__inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   &__title {
-    height: 100vh;
-    line-height: 100vh;
+    position: relative;
+    line-height: 1;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
     font-size: 5vw;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 10px;
+      background-color: currentcolor;
+      animation-name: expand;
+      animation-duration: .6s;
+      animation-delay: .4s;
+      animation-fill-mode: forwards;
+    }
+  }
+  &__link {
+    font-style: italic;
+  }
+}
+
+@keyframes expand {
+  100% {
+    width: 100%;
   }
 }
