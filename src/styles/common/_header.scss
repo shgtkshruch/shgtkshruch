@@ -8,7 +8,7 @@
     left: 50%;
     transform: translate(-50%, calc(-50% + 100px));
     animation-name: fadeInUp;
-    animation-duration: 1s;
+    animation-duration: 1.0s;
     animation-fill-mode: forwards;
     opacity: 0;
   }
@@ -29,7 +29,7 @@
       background-color: currentcolor;
       animation-name: expand;
       animation-duration: .6s;
-      animation-delay: .4s;
+      animation-delay: 0.8s;
       animation-fill-mode: forwards;
     }
   }
