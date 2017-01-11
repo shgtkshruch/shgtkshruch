@@ -37,9 +37,13 @@
     font-style: italic;
   }
   &__linkIcon {
-    padding-right: 1rem;
-    font-size: 2.2rem;
-    vertical-align: middle;
+    display: none;
+    @media (min-width: $screen-sm) {
+      display: inline-block;
+      padding-right: 1rem;
+      font-size: 2.2rem;
+      vertical-align: middle;
+    }
   }
 }
 
