@@ -1,0 +1,68 @@
+extends layout
+
+block title
+  title shgtkshruch - timeline
+
+block body
+  header.header
+    .header__inner
+      span.header__desc chronology
+      h2.header__title timeline
+      a.header__link(href="http://shgtkshruch.github.io/timeline" target="_blank")
+        i.fa.fa-external-link.header__linkIcon
+        | http://shgtkshruch.github.io/timeline
+
+  .outline
+    .l-container
+      .outline__inner
+        h2.outline__heading
+          span.outline__headingText outline
+        p.outline__text
+          | 歴史上の出来事や人物を一覧で表示するアプリケーションが欲しいと思い、自分用のアプリケーションとして制作しました。
+          br
+          | 自分がピックアップした歴史上の出来事をYAMLのファイルに書き込むことで、データを管理しています。
+          br
+          | 年表のUIに合うように、通常のWEBサイトとは違い、横スクロールを採用しました。
+          br
+          | 左下のフォームを使い、ユーザーが表示したい要素（出来事、人物など）を選択することで、表示される要素を動的に変更することができます。
+          br
+          | ただ歴上の出来事を並べるだけでなく、その詳細情報をWikipediaのAPIを利用して表示できるようにしています。
+        table.dataTable
+          - var data = [];
+          - data[0] = {th: '制作年', td: 2015};
+          - data[1] = {th: '製作期間', td: '2 weeks'};
+          - data[2] = {th: '担当', td: 'Design, Coding'};
+          - data[3] = {th: '使用技術', td: ['Jade', 'Sass', 'CoffeeScript', 'gulp', 'Git', 'VIM ', 'YAML']};
+          each d, i in data
+            tr.dataTable__row
+              th.dataTable__th= d.th
+              td.dataTable__td
+                if i === 3
+                  each t in d.td
+                    = t
+                    | &nbsp;
+                else
+                  = d.td
+
+  .screenshot.screenshot--timeline
+    .l-container
+      .screenshot__header.cf
+        span.screenshot__head screenshot
+        span.screenshot__head creater's memo
+      .screenshot__container
+        .screenshot__imgs
+          img.screenshot__img(src="images/timeline/screenshot-1.png" alt="screenshot")
+          img.screenshot__img(src="images/timeline/screenshot-2.png" alt="screenshot")
+          img.screenshot__img(src="images/timeline/screenshot-3.png" alt="screenshot")
+        .screenshot__points
+          - var points = [];
+          - points[0] = {text: '歴史上の出来事をレンガ状に並べています。政治や経済、哲学や芸術など異なる分野の出来事や人物が一覧で見ることができます。'};
+          - points[1] = {text: '並べ方は2種類あり、レンガ状に積むタイプとウォーターフォール型に並べるタイプもあります。'};
+          - points[2] = {text: 'アイテムをクリックすると、詳細の内容がライトボックスで開きます。情報はWikipediaのAPIからAjaxを利用して取得しています。'};
+
+          each point in points
+            .screenshot__point.js-point
+              .screenshot__desc
+                p.screenshot__text= point.text
+
+  include partials/footer
