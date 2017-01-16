@@ -1,0 +1,56 @@
+extends layout
+
+block title
+  title shgtkshruch - feed-pocket
+
+block body
+  header.header
+    .header__inner
+      span.header__desc RSS reader
+      h2.header__title FEED POCKET
+      a.header__link(href="http://shgtkshruch.github.io/feed-pocket/" target="_blank")
+        i.fa.fa-external-link.header__linkIcon
+        | http://shgtkshruch.github.io/feed-pocket/
+
+  .outline
+    .l-container
+      .outline__inner
+        h2.outline__heading
+          span.outline__headingText outline
+        p.outline__text
+
+        table.dataTable
+          - var data = [];
+          - data[0] = {th: '制作年', td: 2015};
+          - data[1] = {th: '製作期間', td: '5 days'};
+          - data[2] = {th: '担当', td: 'Design, Coding'};
+          - data[3] = {th: '使用技術', td: ['Jade', 'Sass', 'Babel', 'gulp', 'Git', 'VIM ', ]};
+          each d, i in data
+            tr.dataTable__row
+              th.dataTable__th= d.th
+              td.dataTable__td
+                if i === 3
+                  each t in d.td
+                    = t
+                    | &nbsp;
+                else
+                  = d.td
+
+  .screenshot.screenshot--feed-pocket
+    .l-container
+      .screenshot__header.cf
+        span.screenshot__head screenshot
+        span.screenshot__head creater's memo
+      .screenshot__container
+        .screenshot__imgs
+          img.screenshot__img(src="images/feed-pocket/screenshot-1.png" alt="screenshot")
+          img.screenshot__img(src="images/feed-pocket/screenshot-2.jpg" alt="screenshot")
+        .screenshot__points
+          - var points = [];
+          - points[0] = {text: 'メガメニュー自体がトップページのデザインになっています。ホバーするとメニューが開くようになっています。'};
+          - points[1] = {text: '一つひとつの記事をゆったりと見れるように、1ページに1記事だけを表示するデザインを採用しました。スクロースすると記事が下から浮き上がってきます。'};
+
+          each point in points
+            .screenshot__point.js-point
+              .screenshot__desc
+                p.screenshot__text= point.text

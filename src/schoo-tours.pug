@@ -56,14 +56,14 @@ block body
         span.screenshot__head screenshot
         span.screenshot__head creater's memo
       .screenshot__container
-        .screenshot__img
-          img(src="images/schoo-tours/screenshot.jpg" alt="screenshot")
+        .screenshot__imgs
+          img.screenshot__img(src="images/schoo-tours/screenshot.jpg" alt="screenshot")
         .screenshot__points
           - var points = [];
-          - points[0] = {title: 'スライドショー', text: 'プラグインを用いずにスライドショーの実装を行いました。'};
-          - points[1] = {title: 'SVGアニメーション', text: 'SVGのラインアニメーションと共にアイコンが浮き出てくる動きを作りました。Lazy Line Painterを用いました。'};
-          - points[2] = {title: 'ライトボックス', text: '画像のクリックすると上品なアニメーションと共にライトボックスが開きます。こちらもプラグインを用いずに実装しました。'};
-          - points[3] = {title: 'google map', text: 'サイトのデザインにマッチするように、google mapの配色をカスタマイズしてデザインを調和させました。またスクロールしてくると、マップのピンが上から落ちてくるアニメーションも加えました。'};
+          - points[0] = {text: 'プラグインを用いずにスライドショーの実装を行いました。'};
+          - points[1] = {text: 'SVGのラインアニメーションと共にアイコンが浮き出てくる動きを作りました。Lazy Line Painterを用いました。'};
+          - points[2] = {text: '画像のクリックすると上品なアニメーションと共にライトボックスが開きます。こちらもプラグインを用いずに実装しました。'};
+          - points[3] = {text: 'サイトのデザインにマッチするように、google mapの配色をカスタマイズしてデザインを調和させました。またスクロールしてくると、マップのピンが上から落ちてくるアニメーションも加えました。'};
 
           each point in points
             .screenshot__point.js-point
