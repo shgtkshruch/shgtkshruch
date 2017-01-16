@@ -1,5 +1,6 @@
 .screenshot {
   $root: &;
+  margin-bottom: 7rem;
   &--schoo-tours {
     #{$root}__point {
       &:nth-of-type(1) {
