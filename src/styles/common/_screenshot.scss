@@ -27,7 +27,7 @@
       }
     }
   }
-  &--timeline{
+  &--timeline {
     #{$root}__point {
       &:nth-of-type(1) {
         top: 8%;
@@ -37,6 +37,19 @@
       }
       &:nth-of-type(3) {
         top: 77%;
+      }
+    }
+  }
+  &--ballxball {
+    #{$root}__point {
+      &:nth-of-type(1) {
+        top: 0%;
+      }
+      &:nth-of-type(2) {
+        top: 17%;
+      }
+      &:nth-of-type(3) {
+        top: 38%;
       }
     }
   }

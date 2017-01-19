@@ -1,0 +1,65 @@
+extends layout
+
+block title
+  title shgtkshruch - ballxball
+
+block body
+  header.header
+    .header__inner
+      span.header__desc blog
+      h2.header__title ballxball
+      a.header__link(href="https://github.com/shgtkshruch/ballxball" target="_blank")
+        i.fa.fa-external-link.header__linkIcon
+        | https://github.com/shgtkshruch/ballxball
+
+  .outline
+    .l-container
+      .outline__inner
+        h2.outline__heading
+          span.outline__headingText outline
+        p.outline__text
+          | 自分のブログ用にデザインしたサイトです。
+          br
+          | 記事の内容に集中できるように、シンプルなデザインを心がけました。
+          br
+          | しかし、SVGでロゴをアニメーションさせたり、記事にホバーエフェクトを加えることで、退屈になりすぎないように配慮しました。
+          br
+          | WordPressのテンプレート階層や最新のAPIを参照しながら、WordPressの作法に則ったPHPプログラムを組みました。
+        table.dataTable
+          - var data = [];
+          - data[0] = {th: '制作年', td: 2017};
+          - data[1] = {th: '製作期間', td: '2 weeks'};
+          - data[2] = {th: '担当', td: 'Design, Coding'};
+          - data[3] = {th: '使用技術', td: ['Pug', 'Sass', 'Babel', 'gulp', 'Git', 'VIM ',, 'PHP', 'Docker', 'WordPress']};
+          each d, i in data
+            tr.dataTable__row
+              th.dataTable__th= d.th
+              td.dataTable__td
+                if i === 3
+                  each t in d.td
+                    = t
+                    | &nbsp;
+                else
+                  = d.td
+
+  .screenshot.screenshot--ballxball
+    .l-container
+      .screenshot__header.cf
+        span.screenshot__head screenshot
+        span.screenshot__head creater's memo
+      .screenshot__container
+        .screenshot__imgs
+          img.screenshot__img(src="images/ballxball/screenshot-1.png" alt="screenshot")
+          img.screenshot__img(src="images/ballxball/screenshot-2.png" alt="screenshot")
+        .screenshot__points
+          - var points = [];
+          - points[0] = {text: 'ロゴはSVGを使い、拡大縮小するアニメーションとともに動き続けます。'};
+          - points[1] = {text: '線で区画を区切るシンプルなデザインを採用し、記事の内容に集中できるようにしました。'};
+          - points[2] = {text: '記事の詳細ページです。こちらもトップページのデザインを踏襲し、シンプルなデザインにまとめました。'};
+
+          each point in points
+            .screenshot__point.js-point
+              .screenshot__desc
+                p.screenshot__text= point.text
+
+  include partials/footer
