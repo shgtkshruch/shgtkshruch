@@ -1,0 +1,68 @@
+extends layout
+
+block title
+  title shgtkshruch - hydro-power
+
+block body
+  header.header
+    .header__inner
+      span.header__desc corporate site
+      h2.header__title HYDRO POWER
+      a.header__link(href="http://hpjsuiso.com/" target="_blank")
+        i.fa.fa-external-link.header__linkIcon
+        | http://hpjsuiso.com/
+
+  .outline
+    .l-container
+      .outline__inner
+        h2.outline__heading
+          span.outline__headingText outline
+        p.outline__text
+          | 水素サロンを提供している会社様のコーポレートサイトです。
+          br
+          | 水素を扱っているので、そのイメージを大切にして、流動的なデザインを採用いたしました。
+          br
+          | また、水から連想される波の動きをSVGで実現し、パララックスをとり入れることでサイトに奥行きをもたせるなど、JavaScriptを効果的に使うことで、サイトのデザイン性を高めました。
+          br
+          | さらに、ユーザー様の多くがモバイルデバイスでアクセスすることも考慮して、レスポンシブデザインで制作いたしました。
+          br
+          | 長期的に運用することを考慮して、SMACSSをベースにしたCSSの設計を採用し、BEMをベースにしたクラス名にすることで、CSSのメンテナンス性を高めました。
+          br
+        table.dataTable
+          - var data = [];
+          - data[0] = {th: '制作年', td: 2017};
+          - data[1] = {th: '製作期間', td: '1 week'};
+          - data[2] = {th: '担当', td: 'Coding'};
+          - data[3] = {th: '使用技術', td: ['Pug', 'Sass', 'Babel', 'gulp', 'Git', 'VIM']};
+          each d, i in data
+            tr.dataTable__row
+              th.dataTable__th= d.th
+              td.dataTable__td
+                if i === 3
+                  each t in d.td
+                    = t
+                    | &nbsp;
+                else
+                  = d.td
+
+  .screenshot.screenshot--hydro-power
+    .l-container
+      .screenshot__header.cf
+        span.screenshot__head screenshot
+        span.screenshot__head creater's memo
+      .screenshot__container
+        .screenshot__imgs
+          img.screenshot__img(src="images/hydro-power/screenshot-1.jpg" alt="screenshot")
+        .screenshot__points
+          - var points = [];
+          - points[0] = {text: 'ヒローイメージに表示されるテキストは一つずつ水の底から浮かび上がるようなアニメーションと共に現れます。'};
+          - points[1] = {text: 'SVGとJavaScriptを組み合わせることで、波のような動きを実現しました。白い背景がスムーズに波打ちます。'};
+          - points[2] = {text: '一つひとつの要素が水に浮かび上がる様な自由なレイアウトを再現しながら、1ソースによるレスポンシブデザインを実現しました。'};
+          - points[3] = {text: '色彩やピンのデザインがサイトのデザインに合うように、Google Mapのデザインをカスタマイズしました。'};
+
+          each point in points
+            .screenshot__point.js-point
+              .screenshot__desc
+                p.screenshot__text= point.text
+
+  include partials/footer
